@@ -135,14 +135,10 @@ def evaluate(test_df, dist_0, dist_1, cat_0_pr_dict, cat_1_pr_dict, Pr_y_eq_0, P
     accuracy = num_correct / total
     return accuracy, predictions
 
-def perform_mle(train_df, test_df):
-    train = pd.read_csv('hw1data/propublicaTrain.csv')
-    test = pd.read_csv('hw1data/propublicaTest.csv')
-    
+def perform_mle(train, test):
     # Preprocessing
     train_df = preprocess(train)
     test_df = preprocess(test)
-    train_df.head()
     
     # Split to categorical and quantitative
     categ_train_df, quant_train_df = split_categorical_and_quant(train_df)
